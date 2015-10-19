@@ -1,0 +1,36 @@
+create database IdeaGate;
+
+
+create table user( 
+     userId  int unsigned not null auto_increment primary key, 
+     userName varchar(50) not null unique, 
+     password varchar(50) not null,
+     question varchar(50) not null,
+     answer varchar(50) not null,
+     email varchar(30) not null unique,
+     admin bollean default 0
+     
+) Engine= Innodb;
+
+
+create table category( 
+     id  int unsigned not null auto_increment primary key, 
+     name varchar(50) not null unique
+     
+) Engine= Innodb;
+
+
+create table book( 
+     id  int unsigned not null auto_increment primary key, 
+     title varchar(50) not null unique,
+     auther varchar(50) not null ,
+     intro varchar(200)  ,
+
+     catId  int unsigned not null , 
+     
+     FOREIGN KEY (catId) REFERENCES company (id)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
+
+     
+) Engine= Innodb;

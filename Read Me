@@ -1,0 +1,5 @@
+First : please open appconf.php and put your user name and password of database 
+
+Second : one Database folder , there is dump database
+
+Third :  run the login page that is found in directory pages/examples/login.php
